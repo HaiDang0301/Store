@@ -1,0 +1,30 @@
+<div class="style" style="display: flex; justify-content: center; margin-left: 100px;">
+<div class="createproduct">
+<div class="mt-4">
+    <form method="POST" action="/admin/product/{{product._id}}?_method=PUT">
+  <div class="mb-3">
+    <h3>Sửa sản phẩm</h3>
+    <label for="name">Tên Sản Phẩm</label>
+    <input type="text" style="width: 400px;" class="form-control"  id="name" name = "name" value="{{product.name}}">
+  </div>
+   <div class="mb-3">
+    <label for="name">Ảnh minh họa</label>
+    <input type="text" style="width: 400px;" class="form-control"  id="image" name = "image" value="{{product.image}}">
+  </div>
+  <div class="mb-3">
+    <label for="Description" class="form-label">Mô Tả</label>
+   <input type="text" class="form-control" style="width: 400px;" id="description" name = "description" value="{{product.description}}">
+  </div>
+  <div class="mb-3">
+    <label for="Description" class="form-label" >Số Lượng</label>
+   <input type="text" class="form-control" style="width: 400px;" id="sl" name = "sl" value="{{product.sl}}">
+  </div>
+  <div class="mb-3">
+    <label for="Description" class="form-label">Giá</label>
+   <input type="text" class="form-control" style="width: 400px;" id="price" name = "price" value="{{product.price}}">
+  </div>
+  <button style="margin-left: 150px;" type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+</div>

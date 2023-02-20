@@ -1,6 +1,15 @@
 h2 {
   font-size: 20px;
-  margin-bottom: 15px;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo h1 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .logo img {
@@ -67,6 +76,14 @@ h2 {
 
 .funtion a:hover {
   color: black;
+}
+
+.role {
+  margin-right: 100px;
+}
+
+.role li {
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=app.css.map */

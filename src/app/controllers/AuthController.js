@@ -1,38 +1,18 @@
 const Account = require("../models/Account");
+const cookies = require("cookie-parser");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
+// get config vars
+dotenv.config();
 class AuthController {
-  singup(req, res) {
+  register(req, res) {
     res.render("register");
   }
   login(req, res) {
     res.render("login");
   }
-  // register(req, res, next) {
-  //   try {
-  //     const account = new Account(req.body);
-  //     account
-  //       .save()
-  //       .then(() => res.redirect("/login"))
-  //       .catch((err) => {
-  //         res.send("err");
-  //       });
-  //   } catch (error) {}
-  // }
-  // async loginAuth(req, res, next) {
-  //   try {
-  //     const email = await Account.findOne({ email: req.body.email });
-  //     if (!email) {
-  //       res.send("Wrong Email");
-  //     }
-  //     if (email && email.password === req.body.password) {
-  //       res.redirect("/");
-  //     } else {
-  //       res.send("Wrong Password");
-  //     }
-  //   } catch (error) {}
-  // }
-  // Ma hoa password
-  async register(req, res, next) {
+  async registerAuth(req, res, next) {
     try {
       const salt = await bcrypt.genSalt(10);
       const hashed = await bcrypt.hash(req.body.password, salt);
@@ -62,6 +42,15 @@ class AuthController {
         res.send("Wrong Password");
       }
       if (email && password) {
+        const token = jwt.sign(
+          {
+            id: email.id,
+            admin: email.admin,
+          },
+          process.env.TOKEN_SECRET,
+          { expiresIn: "1800s" }
+        );
+        const { password, ...others } = email._doc;
         res.redirect("/");
       }
     } catch (error) {}

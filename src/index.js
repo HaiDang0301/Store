@@ -1,13 +1,17 @@
+const cookieParser = require("cookie-parser");
 const express = require("express");
 const { engine } = require("express-handlebars");
+const methodOverride = require("method-override");
 const path = require("path");
 const app = express();
 const route = require("./routes");
 const db = require("./config/db");
+app.use(methodOverride("_method"));
 app.engine(
   ".hbs",
   engine({
     extname: ".hbs",
+    helpers: { sum: (a, b) => a + b },
   })
 );
 db.connect();
@@ -22,7 +26,8 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(cookieParser());
 //Router
 route(app);
-
-app.listen(3000);
+const port = 3000;
+app.listen(port, console.log("Start server port : " + port));
