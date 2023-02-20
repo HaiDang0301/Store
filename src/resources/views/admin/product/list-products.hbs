@@ -1,0 +1,27 @@
+<div class="mt-4" style="margin-left: 100px;">
+    <h3>Danh sách sản phẩm</h3>
+    <table class="table">
+  <thead>
+    <tr style="text-align: center;">
+      <th scope="col">STT</th>
+      <th scope="col">Ảnh minh họa</th>
+      <th scope="col">Tên sản phẩm</th>
+      <th scope="col">Giá</th>
+      <th scope="col">Số Lượng</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each product}}
+    <tr style="text-align: center;">
+      <th scope="row">{{sum @index 1}}</th>
+      <td><img src="{{this.image}}" alt="{{this.image}}" style="with:20px;height: 20px;"></td>
+      <td>{{this.name}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.sl}}</td>
+      <td><a href="/admin/product/{{this._id}}/edit" class="btn btn-link"><img src="/images/update.png" style="width: 25px;height: 25px;"></a></td>
+      <td><a href="" class="btn btn-link"><img src="/images/delete.png" style="width: 25px;height: 25px;"></a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>

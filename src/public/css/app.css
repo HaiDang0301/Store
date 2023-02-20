@@ -1,0 +1,89 @@
+h2 {
+  font-size: 20px;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo h1 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-left: 100px;
+}
+
+.account a {
+  text-decoration: none;
+  color: black;
+}
+
+.account a:hover {
+  color: blue;
+}
+
+.wrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  margin-left: 100px;
+  text-align: center;
+  border: 1px solid;
+  width: 500px;
+  border-radius: 30px;
+}
+
+.createproduct {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  height: 530px;
+  border: 1px solid;
+  border-radius: 40px;
+}
+
+.createproduct h3 {
+  text-align: center;
+}
+
+.container {
+  float: left;
+  margin-top: 50px;
+}
+
+.footer {
+  float: left;
+  width: 100%;
+}
+
+.image:hover {
+  transform: scale(1.01);
+}
+
+.funtion a {
+  text-decoration: none;
+  color: blue;
+}
+
+.funtion a:hover {
+  color: black;
+}
+
+.role {
+  margin-right: 100px;
+}
+
+.role li {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=app.css.map */
