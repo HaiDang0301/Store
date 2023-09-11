@@ -8,5 +8,5 @@ router.get("/admin/product/:id/edit", adminController.edit);
 router.put("/admin/product/:id", adminController.update);
 router.get("/:slug", adminController.show);
 router.get("/", adminController.home);
-
+router.get("/:slug", adminController.show);
 module.exports = router;
